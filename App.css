@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+:root {
+  --background-color: white;
+  --text-color: black;
+  --elements-color: white;
+}
+
+body {
+  border: 0;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main,
+header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+main.dark,
+header.dark {
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: white;
+  --elements-color: hsl(209, 23%, 22%);
+}
+.fa-moon {
+  color: yellowgreen;
+}
+.fa-sun {
+  color: yellow;
+}
+
+.header-container {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  padding-inline: 24px;
+  background-color: var(--elements-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.title {
+  font-weight: 800;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.theme-changer {
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .title {
+    font-size: 16px;
+  }
+  .header-content p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+/* css for main */
+main {
+  padding: 24px;
+  min-height: calc(100vh - 73px);
+}
+
+/* search bar CSS */
+.search-filter-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  margin-top: 16px;
+  margin-bottom: 48px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.search-container {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 4px;
+  padding-left: 24px;
+  color: #999;
+  overflow: hidden;
+  background-color: var(--elements-color);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.search-container input {
+  border: none;
+  outline: none;
+  padding: 16px;
+  width: 94%;
+  border-radius: 4px;
+  background-color: var(--elements-color);
+  color: var(--text-color);
+}
+.search-container input::placeholder {
+  color: #999;
+}
+/* filter css */
+
+.filter-by-region {
+  border: none;
+  outline: none;
+  padding: 16px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: var(--elements-color);
+  color: var(--text-color);
+}
+
+.filter-by-region option {
+  background-color: var(--elements-color);
+  color: var(--text-color);
+}
+
+/* CSS for country container */
+.country-container {
+  max-width: 1200px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 32px;
+  margin-inline: auto;
+}
+.country-card {
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 8px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  background-color: var(--elements-color);
+}
+.flag-container {
+  height: 160px;
+  overflow: hidden;
+}
+.country-card:hover {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  outline: 1px solid gray;
+}
+.card-title {
+  font-size: 24px;
+  margin-block: 8px;
+}
+.country-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.card-text {
+  padding: 16px;
+}
+.card-text p {
+  margin-block: 8px;
+}
+
+/* Media query for responsive mobile view */
+
+@media (max-width: 700px) {
+  .search-filter-container {
+    flex-direction: column;
+  }
+  .search-container input {
+    width: 90%;
+  }
+}
