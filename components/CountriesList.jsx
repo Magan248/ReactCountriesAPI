@@ -4,8 +4,7 @@ import CountryCard from './CountryCard'
 
 export default function CountriesList({ query }) {
   const [countriesData, setCountriesData] = useState([])
-  console.log(countriesData);
-
+  
 //const [filteredDat, setQuery] = useFilter(data, () => '')
 
   useEffect(() => {
